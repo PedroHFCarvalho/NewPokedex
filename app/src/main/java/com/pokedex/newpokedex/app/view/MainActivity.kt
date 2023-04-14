@@ -5,7 +5,7 @@ import com.pokedex.newpokedex.commons.view.BaseActivity
 import com.pokedex.newpokedex.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     private val viewModel by lazy { listingProviderViewModel(this) }
 
