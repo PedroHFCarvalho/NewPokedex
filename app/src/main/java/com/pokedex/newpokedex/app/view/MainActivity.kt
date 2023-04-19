@@ -15,6 +15,9 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initView() {
-        TODO("Not yet implemented")
+        binding.BUTAO.setOnClickListener {
+            viewModel.getListPokemon()
+        }
+
     }
 }

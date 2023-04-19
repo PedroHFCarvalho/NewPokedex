@@ -9,11 +9,11 @@ abstract class BaseActivity : AppCompatActivity() {
     abstract fun setBinding()
     abstract fun initView()
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        this.initView()
         this.setBinding()
+        this.initView()
     }
 
 }
