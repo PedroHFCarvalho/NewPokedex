@@ -15,9 +15,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initView() {
-        binding.BUTAO.setOnClickListener {
+        binding.button.setOnClickListener {
             viewModel.getListPokemon()
         }
-
     }
 }

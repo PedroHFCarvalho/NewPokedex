@@ -7,10 +7,10 @@
     tools:context=".app.view.MainActivity">
 
     <Button
-        android:id="@+id/BUTAO"
+        android:id="@+id/button"
         android:layout_width="200dp"
         android:layout_height="143dp"
-        android:text="BUTAO"
+        android:text="Text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
