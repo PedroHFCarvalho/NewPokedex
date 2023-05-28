@@ -1,5 +1,5 @@
 package com.pokedex.newpokedex.app.viewModel.listing
 
-class ListingInterpret {
-
+open class ListingInterpret {
+ object GetList:ListingInterpret()
 }
