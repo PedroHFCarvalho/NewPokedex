@@ -6,4 +6,8 @@ open class SelectPokemonEvent {
     data class GetPokemonList(
         val pokeList: PokeList
     ) : SelectPokemonEvent()
+
+    data class GetErrorPokemonList(
+        val error: String
+    ) : SelectPokemonEvent()
 }

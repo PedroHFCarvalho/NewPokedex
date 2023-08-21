@@ -1,12 +1,13 @@
 package com.pokedex.newpokedex.app.viewModel.selectPokemon
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.pokedex.newpokedex.app.interpret.SelectPokemonInterpret
+import com.pokedex.newpokedex.app.model.PokeList
 import com.pokedex.newpokedex.commons.viewModel.BaseViewModel
 import com.pokedex.newpokedex.commons.viewModel.SingleLiveData
 import kotlinx.coroutines.launch
+import retrofit2.Response
 
 class SelectPokemonViewModel(private val useCase: SelectPokemonUseCase) : BaseViewModel() {
 
@@ -25,20 +26,20 @@ class SelectPokemonViewModel(private val useCase: SelectPokemonUseCase) : BaseVi
     fun getListPokemon() {
         state.postValue(SelectPokemonState.ShowLoading)
         viewModelScope.launch {
-            try {
-                val result = useCase.getListPokemon()
-
-                if (result.isSuccessful) {
-                    Log.d("POKELIST", result.body().toString())
-                } else {
-                    Log.d("POKELIST", result.errorBody().toString())
-                }
-
-            } catch (e: Exception) {
-
-            }
-
+            val result = useCase.getListPokemon()
+            afterResultApi(result)
             state.postValue(SelectPokemonState.EndLoading)
+        }
+    }
+
+    private fun afterResultApi(result: Response<PokeList>) {
+        when (result.isSuccessful) {
+            true -> result.body()?.let {
+                event.postValue(SelectPokemonEvent.GetPokemonList(it))
+            }
+            false -> result.errorBody()?.let {
+                event.postValue(SelectPokemonEvent.GetErrorPokemonList(it.toString()))
+            }
         }
     }
 }

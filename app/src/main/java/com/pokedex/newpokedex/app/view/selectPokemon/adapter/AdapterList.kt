@@ -12,10 +12,7 @@ class AdapterList : RecyclerView.Adapter<AdapterList.PokemonCardViewHolder>() {
     private var pokemonList: MutableList<PokeView> = mutableListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonCardViewHolder {
         val binding =
-            ItemViewPokemonCardBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent, false
-            )
+            ItemViewPokemonCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PokemonCardViewHolder(binding)
     }
 
