@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pokedex.newpokedex.app.model.PokeView
 import com.pokedex.newpokedex.databinding.ItemViewPokemonCardBinding
 
-class AdapterList() :
-    RecyclerView.Adapter<AdapterList.PokemonCardViewHolder>() {
+class AdapterList : RecyclerView.Adapter<AdapterList.PokemonCardViewHolder>() {
 
     private var pokemonList: MutableList<PokeView> = mutableListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonCardViewHolder {
