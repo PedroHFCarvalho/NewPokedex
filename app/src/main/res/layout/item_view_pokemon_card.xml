@@ -6,11 +6,10 @@
     android:orientation="vertical"
     android:paddingVertical="10dp">
 
-
     <TextView
         android:id="@+id/text_list"
         android:textSize="24sp"
-        tools:text="CU"
+        tools:text="Pokemon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
